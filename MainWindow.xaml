@@ -1,0 +1,85 @@
+﻿<Window x:Class="TempCleanerLite.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TEMP Folder Cleaner" Height="400" Width="400"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <Grid>
+        <!-- Semi-Transparent Background -->
+        <Canvas Name="BackgroundCanvas" Background="#F01E1E1E">
+            <!-- Blurred Circles -->
+            <Ellipse Name="Circle1" Width="200" Height="200" Opacity="0.5">
+                <Ellipse.Fill>
+                    <SolidColorBrush x:Name="Circle1Brush" Color="Blue" />
+                </Ellipse.Fill>
+                <Ellipse.Effect>
+                    <BlurEffect Radius="50" />
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse Name="Circle2" Width="200" Height="200" Opacity="0.5">
+                <Ellipse.Fill>
+                    <SolidColorBrush x:Name="Circle2Brush" Color="Red" />
+                </Ellipse.Fill>
+                <Ellipse.Effect>
+                    <BlurEffect Radius="50" />
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse Name="Circle3" Width="200" Height="200" Opacity="0.5">
+                <Ellipse.Fill>
+                    <SolidColorBrush x:Name="Circle3Brush" Color="Green" />
+                </Ellipse.Fill>
+                <Ellipse.Effect>
+                    <BlurEffect Radius="50" />
+                </Ellipse.Effect>
+            </Ellipse>
+            <!--<Canvas.Effect>
+                
+            </Canvas.Effect>-->
+        </Canvas>
+
+        <!-- Custom Top Bar -->
+        <Border Background="#C02D2D30" Height="30" VerticalAlignment="Top" MouseLeftButtonDown="TopBar_MouseLeftButtonDown">
+            <Grid>
+                <!-- Title -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="TEMP Cleaner" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="2,0" />
+                    <TextBlock Text="v2.2.3" Foreground="Gray" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="2,0" />
+                </StackPanel>
+                
+                <!-- Window Controls -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <!-- Minimize Button -->
+                    <Button x:Name="MinimizeButton" Content="" Width="30" Background="#80FFFF00" Foreground="White" BorderThickness="0" Click="MinimizeButton_Click" />
+
+                    <!-- Close Button -->
+                    <Button x:Name="CloseButton" Content="" Width="30" Background="#80FF3030" Foreground="White" BorderThickness="0" Click="CloseButton_Click" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Main Content -->
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="350" Margin="0,40,0,0">
+            <!-- CheckBox for Cleaning Options -->
+            <CheckBox x:Name="CleanAllTempFoldersCheckBox" Content="Clean All Temp Folders" Margin="10" Foreground="White" />
+
+            <!-- Clean Button -->
+            <Button x:Name="CleanButton" Content="Clean TEMP Folders" HorizontalAlignment="Center" Click="CleanButton_Click" Margin="10" />
+
+            <!-- Overall Progress (Temp Folders) -->
+            <Grid>
+                <ProgressBar x:Name="OverallProgressBar" Minimum="0" Maximum="100" Height="20" Margin="10,2" />
+                <TextBlock x:Name="OverallProgressText" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" />
+            </Grid>
+
+            <!-- Current Folder Progress (Files/Directories) -->
+            
+            <Grid>
+                <ProgressBar x:Name="CurrentFolderProgressBar" Minimum="0" Maximum="100" Height="20" Margin="10,2" />
+                <TextBlock x:Name="CurrentFolderProgressText" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" />
+            </Grid>
+            <TextBlock x:Name="InfoText" Text="--- Folders, --- items" Margin="10,2" Foreground="White" />
+
+            <!-- Status Text -->
+            <TextBlock x:Name="StatusText" HorizontalAlignment="Left" Margin="10,2" TextAlignment="Left" Foreground="White" Text="Hello! Click Clean TEMP Folders" />
+        </StackPanel>
+    </Grid>
+</Window>

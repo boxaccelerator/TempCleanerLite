@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>TempCleanerLite</id>
+    <version>1.0.0</version>
+    <authors>TempCleanerLite</authors>
+    <description>Package Description</description>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net9.0-windows7.0" />
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net9.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\alexk\source\repos\TempCleanerLite\TempCleanerLite\bin\Debug\net9.0-windows\TempCleanerLite.runtimeconfig.json" target="lib\net9.0-windows7.0\TempCleanerLite.runtimeconfig.json" />
+    <file src="C:\Users\alexk\source\repos\TempCleanerLite\TempCleanerLite\bin\Debug\net9.0-windows\TempCleanerLite.dll" target="lib\net9.0-windows7.0\TempCleanerLite.dll" />
+  </files>
+</package>
